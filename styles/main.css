@@ -1,6 +1,7 @@
 :root {
   --font-family: sans-serif;
   --color-grey: rgb(238, 238, 238);
+  --color-greyDarker: rgb(84, 84, 84);
   font-size: 16px;
 }
 
@@ -19,17 +20,19 @@ body{
  margin: auto;
 }
 
-  .container{
-    display: flex;
-    align-items: center;
-  }
-  .searchBar{
-    margin-left: auto;
-  }
-  .header-option{
-      padding-left: 5rem;
-  }
-  .currentDetails, .searchBar{
+.container{
+  display: flex;
+  align-items: center;
+}
+
+.searchBar{
+  margin-left: auto;
+}
+
+.header-option{
+    padding-left: 5rem;
+}
+.currentDetails, .searchBar{
     display: flex;
   }
 }
@@ -51,4 +54,78 @@ body{
 .options-btn.selected {
   background: black;
   color: white;
+}
+
+.listings{
+  padding: 2rem 0;
+}
+
+.header{
+  display:flex;
+  align-items: center;
+}
+
+.header.title{
+
+}
+
+h2{
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+span{
+  color: var(--color-greyDarker)
+}
+
+.listings-list{
+
+}
+
+.listings-list-element{
+
+}
+
+.circle{
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+
+h3{
+  font-weight:400;
+  margin-bottom: 0.3rem;
+  margin-top: 0;
+}
+
+span{
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-greyDarker)
+}
+
+.rating{
+margin: auto 0 auto auto;
+height: 100%;
+}
+
+span{
+height: 40px;
+width: 40px;
+background: var(--color-grey);
+font-size: 1rem;
+color: black;
 }
