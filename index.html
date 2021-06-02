@@ -18,7 +18,8 @@
           </div>
           <div class="searchBar">
             <div class="header-option">
-              Pesquisar
+              <i data-feather="search"></i>
+              <span>Pesquisar</span>
             </div>
           </div>
         </div>
@@ -39,28 +40,45 @@
       <!-- Listing -->
       <div class="listings">
         <div class="container">
-          <div class="header">
-            <div class="header-title">
-        <h2>Frase da categoria, tem de vir da bd</h2>
-          <span>sub-frase da categoria, tem de vir da BD</span>
+          <div class="listings-header">
+            <div class="listings-header-title">
+        <h2 class=listings-h2">Frase da categoria, (BD)</h2>
+          <span class="listings-span">sub-frase da categoria, (BD)</span>
             </div>
           </div>
         </div>
         <div class="listings-list">
           <div class="listings-list-element">
-            <div class="text">
+            <div class="listings-list-element-text">
               <div class="text-title">
-              <h3>item numero x, vem da BD</h3>
+              <h3 class="text-title-h3">item numero x, (BD)</h3>
               <div class="info">
-                <span>€ vem da bd</span>
+                <span class="text-title-span">4,50€ (BD)</span>
               </div>
               </div>
               <div class="rating">
-                <span class="circle">4.2 vem da BD</span>
-                </div>
+                <span class="rating-circle">4.2 (BD)</span>
+              </div>
+            </div>
+          </div>
+          <div class="listings-list-element">
+            <div class="listings-list-element-text">
+              <div class="text-title">
+              <h3 class="text-title-h3">item numero x+1, (BD)</h3>
+              <div class="info">
+                <span class="text-title-span">4,50€ (BD)</span>
+              </div>
+              </div>
+              <div class="rating">
+                <span class="rating-circle">4.2 (BD)</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <script src="https://unpkg.com/feather-icons"></script>
+       <script>
+         feather.replace()
+       </script>
   </body>
 </html>
