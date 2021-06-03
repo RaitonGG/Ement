@@ -83,6 +83,29 @@ svg{
 
 }
 
+.product-counter{
+  margin-left: auto;
+  display: flex;
+}
+
+.qty{
+    width: 40px;
+    height: 40px;
+    background: var(--color-grey);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.quantity{
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .listings-h2{
   font-weight: 400;
   font-size: 1.7rem;
