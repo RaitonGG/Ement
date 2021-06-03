@@ -23,11 +23,8 @@ body{
 .container{
  width: calc(100% - 120px);
  margin: auto;
-}
-
-.container{
-  display: flex;
-  align-items: center;
+ display: flex;
+ align-items: center;
 }
 
 .searchBar{
@@ -51,11 +48,11 @@ svg{
   }
 }
 
-.options {
+.categories {
   padding: 1rem 0;
 }
 
-.options-btn{
+.categories-btn{
   background: var(--color-grey);
   padding: 0.8rem 1.2rem;
   border-radius: 30px;
@@ -65,7 +62,7 @@ svg{
   letter-spacing: 0.6px;
 }
 
-.options-btn.selected {
+.categories-btn.selected {
   background: black;
   color: white;
 }
