@@ -1,5 +1,5 @@
 :root {
-  --font-family: sans-serif;
+  --font-family: sans-serif; /*Quero usar "Clan Pro"*/
   --color-grey: rgb(238, 238, 238);
   --color-greyDarker: rgb(84, 84, 84);
   font-size: 16px;
@@ -202,4 +202,15 @@ height: 100%;
   background: var(--color-grey);
   font-size: 1rem;
   color: black;
+}
+
+/* ProductPage */
+.buy-btn{
+  background: black;
+  padding: 0.8rem 1.2rem;
+  border: 0;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  color: white;
 }

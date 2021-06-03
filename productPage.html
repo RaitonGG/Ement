@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+      <div class="listings-header">
+        <div class="listings-header-title">
+          <h2>Imagem do Produto, (BD)</h2>
+          <h2>Nome do Produto, (BD)</h2>
+          <span>Pequena descrição sobre o produto e os seus componentes, (BD)</span>
+          <span>Pequena descrição sobre o produto e os seus componentes, (BD)</span>
+          <div>
+            <input type="text" placeholder="Adicionar uma nota (molho extra, sem cebola, etc.)">
+          </div>
+          <div class="product-counter">
+            <span class="minus" onClick='decreaseCount(event, this)'><i data-feather="minus"></i></span>
+            <input type="text" value="1">
+            <span class="plus" onClick='increaseCount(event, this)'><i data-feather="plus"></i></span>
+          </div>
+                <script type="text/javascript">
+                      function increaseCount(a, b) {
+                        var input = b.previousElementSibling;
+                        var value = parseInt(input.value, 10);
+                        value = isNaN(value)? 0 : value;
+                        value ++;
+                        input.value = value;
+                        var buyBtnText = "Adicionar " + value +" ao carrinho • 4.50€"
+                        document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                      }
+                      function decreaseCount(a, b) {
+                        var input = b.nextElementSibling;
+                        var value = parseInt(input.value, 10);
+                        if (value > 1) {
+                          value = isNaN(value)? 0 : value;
+                          value --;
+                          input.value = value;
+                        }
+                        var buyBtnText = "Adicionar " + value +" ao carrinho • 4.50€"
+                        document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                      }
+
+                    </script>
+        </div>
+      </div>
+      <div class="categories">
+          <div class="container">
+              <!-- button para adicionar ao cart. deve mudar o preço -->
+              <button class="buy-btn">
+                <span id="buy-btn-text">Adicionar 1 ao carrinho • 4.50€</span>
+            </button>
+          </div>
+      </div>
+      <script src="https://unpkg.com/feather-icons"></script>
+       <script>
+         feather.replace()
+       </script>
+  </body>
+</html>
