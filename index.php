@@ -1,3 +1,7 @@
+<?php
+$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'VE.n.YVO.+rf', 'platafo8_Ementas');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,9 +84,35 @@
         </div>
         </div>
       </div>
+      
+      <div class="row d-flex justify-content-center">
+      <?php
+        $result = getRestaurantes();
+        if($result){
+          while ($row = mysqli_fetch_assoc($result)){ ?>
+                <div>
+                  <b>Nome do Restaurante:</b> <?php echo $row['Nome_Restaurante']; ?> <br/>
+                </div>
+          <?php } ?> 
+        <?php } ?> 
+      </div>
+
       <script src="https://unpkg.com/feather-icons"></script>
        <script>
          feather.replace()
        </script>
   </body>
 </html>
+
+<?php 
+
+function getRestaurantes(){
+  $sql = "SELECT * FROM restaurantes";
+
+  $result = mysqli_query($GLOBALS['conn'], $sql);
+
+  if(mysqli_num_rows($result) > 0){
+      return $result;
+  }
+}
+?>
