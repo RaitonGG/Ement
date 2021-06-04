@@ -85,7 +85,7 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
         </div>
       </div>
 
-      <div class="row d-flex justify-content-center">
+      <div>
       <?php
         $result = getRestaurantes();
         if($result){
@@ -105,7 +105,6 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
 </html>
 
 <?php 
-
 function getRestaurantes(){
   $sql = "SELECT * FROM restaurantes";
 
