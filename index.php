@@ -72,19 +72,16 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
           <div class="listings-list-element">
             <div class="listings-list-element-text">
               <div class="text-title">
-              <h3 class="text-title-h3">item numero x+1, (BD)</h3>
-              <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
-              <div class="info">
-                <span class="text-title-span">4,50€ (BD)</span>
-                <span class="rating-circle">4.2 (BD)</span>
-              </div>
+                <h3 class="text-title-h3">item numero x+1, (BD)</h3>
+                <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
+                <div class="info">
+                    <span class="text-title-span">4,50€ (BD)</span>
+                    <span class="rating-circle">4.2 (BD)</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
-      </div>
-
       <div>
       <?php
         $result = getRestaurantes();
