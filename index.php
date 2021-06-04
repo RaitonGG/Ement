@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'VE.n.YVO.+rf', 'platafo8_Ementas');
+$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo8_Ementas');
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'VE.n.YVO.+rf', 'platafo
         </div>
         </div>
       </div>
-      
+
       <div class="row d-flex justify-content-center">
       <?php
         $result = getRestaurantes();
