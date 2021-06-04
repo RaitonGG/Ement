@@ -44,44 +44,6 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
     </div>
 
     <!-- Listing -->
-    <div class="listings">
-        <div class="container">
-          <div class="listings-header">
-            <div class="listings-header-title">
-                    <h2>Frase da categoria, (BD)</h2>
-                    <span class="listings-span">sub-frase da categoria, (BD)</span>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-        <div class="listings-list">
-          <div class="listings-list-element">
-            <a href="productPage.html">
-              <div class="listings-list-element-text">
-              <div class="text-title">
-              <h3 class="text-title-h3">item numero x, (BD)</h3>
-              <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
-              <div class="info">
-                <span class="text-title-span">4,50€ (BD)</span>
-                <span class="rating-circle">4.2 (BD)</span>
-              </div>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="listings-list-element">
-            <div class="listings-list-element-text">
-              <div class="text-title">
-                <h3 class="text-title-h3">item numero x+1, (BD)</h3>
-                <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
-                <div class="info">
-                    <span class="text-title-span">4,50€ (BD)</span>
-                    <span class="rating-circle">4.2 (BD)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       <div>
       <?php
         $result = getRestaurantes();
