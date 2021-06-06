@@ -1,3 +1,7 @@
+<?php
+$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo8_Ementas');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +16,6 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Teste servidor 1</h1>
                 <h1>Ement</h1>
                 <!-- Logo ou nome da empresa de onde vem o QRCODE -->
             </div>
@@ -47,7 +50,7 @@
         <div class="container">
             <div class="listings-header">
                 <div class="listings-header-title">
-                    <h2 class=listings-h2 ">Frase da categoria, (BD)</h2>
+                    <h2 class="listings-h2">Frase da categoria, (BD)</h2>
           <span class="listings-span ">sub-frase da categoria, (BD)</span>
             </div>
           </div>
@@ -81,9 +84,34 @@
           </div>
         </div>
       </div>
+      <div class="row d-flex justify-content-center">
+      <?php
+        $result = getRestaurantes();
+        if($result){
+          while ($row = mysqli_fetch_assoc($result)){ ?>
+                <div>
+                  <b>Nome do Restaurante:</b> <?php echo $row['Nome_Restaurante']; ?> <br/>
+                </div>
+          <?php } ?> 
+        <?php } ?> 
+      </div>
+    </div>
       <script src="https://unpkg.com/feather-icons "></script>
        <script>
          feather.replace()
        </script>
   </body>
 </html>
+
+<?php 
+
+function getRestaurantes(){
+  $sql = "SELECT * FROM restaurantes";
+
+  $result = mysqli_query($GLOBALS['conn'], $sql);
+
+  if(mysqli_num_rows($result) > 0){
+      return $result;
+  }
+}
+?>

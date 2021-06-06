@@ -1,3 +1,7 @@
+<?php
+$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo8_ement');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,22 +73,44 @@
           <div class="listings-list-element">
             <div class="listings-list-element-text">
               <div class="text-title">
-              <h3 class="text-title-h3">produto x+1, (BD)</h3>
-              <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
-              <div class="info">
-                <span class="text-title-span">4,50€ (BD)</span>
-                <span class="rating-circle">4.2 (BD)</span>
-              </div>
+                <h3 class="text-title-h3">item numero x+1, (BD)</h3>
+                <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
+                <div class="info">
+                    <span class="text-title-span">4,50€ (BD)</span>
+                    <span class="rating-circle">4.2 (BD)</span>
+                </div>
               </div>
             </div>
           </div>
           </a>
         </div>
-        </div>
+      <div>
+      <?php
+        $result = getRestaurantes();
+        if($result){
+          while ($row = mysqli_fetch_assoc($result)){ ?>
+                <div>
+                  <b>Nome do Restaurante:</b> <?php echo $row['nome_restaurante']; ?> <br/>
+                </div>
+          <?php } ?> 
+        <?php } ?> 
       </div>
+
       <script src="https://unpkg.com/feather-icons"></script>
        <script>
          feather.replace()
        </script>
   </body>
 </html>
+
+<?php 
+function getRestaurantes(){
+  $sql = "SELECT * FROM restaurante";
+
+  $result = mysqli_query($GLOBALS['conn'], $sql);
+
+  if(mysqli_num_rows($result) > 0){
+      return $result;
+  }
+}
+?>
