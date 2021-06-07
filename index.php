@@ -15,7 +15,18 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
         <div class="container">
             <div class="logo">
                 <h1>Ement</h1>
-                <!-- Logo ou nome da empresa de onde vem o QRCODE -->
+                <div>
+                <?php
+                  $result = getRestaurantes();
+                  <!-- Logo ou nome da empresa de onde vem o QRCODE -->
+                  if($result){
+                    while ($row = mysqli_fetch_assoc($result)){ ?>
+                          <div>
+                            <b>Nome do Restaurante:</b> <?php echo $row['nome_restaurante']; ?> <br/>
+                          </div>
+                    <?php } ?>
+                  <?php } ?>
+                </div>
             </div>
             <div class="currentDetails">
                 <!-- Mostra Mesa nrº x-->
@@ -84,18 +95,6 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
           </div>
           </a>
         </div>
-      <div>
-      <?php
-        $result = getRestaurantes();
-        if($result){
-          while ($row = mysqli_fetch_assoc($result)){ ?>
-                <div>
-                  <b>Nome do Restaurante:</b> <?php echo $row['nome_restaurante']; ?> <br/>
-                </div>
-          <?php } ?> 
-        <?php } ?> 
-      </div>
-
       <script src="https://unpkg.com/feather-icons"></script>
        <script>
          feather.replace()
@@ -103,7 +102,7 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
   </body>
 </html>
 
-<?php 
+<?php
 function getRestaurantes(){
   $sql = "SELECT * FROM restaurante";
 
