@@ -1,5 +1,11 @@
 <?php
-$conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo8_ement');
+
+session_start();
+
+require_once ("php/CreateDb.php");
+
+$database = new CreateDb("ementas");
+
 ?>
 
 <!DOCTYPE html>
@@ -95,21 +101,21 @@ $conn = mysqli_connect('localhost', 'platafo8_Ricardo', 'SBCrtHPg5Lv3', 'platafo
           </div>
           </a>
         </div>
+      <div>
+      <?php
+        $result1 = $database->getEstabelecimentos();
+        if($result1){
+          while ($row = mysqli_fetch_assoc($result1)){ ?>
+                <div>
+                  <b>Nome do Restaurante:</b> <?php echo $row['nome_estabelecimento']; ?> <br/>
+                </div>
+          <?php } ?> 
+        <?php } ?> 
+      </div>
+
       <script src="https://unpkg.com/feather-icons"></script>
        <script>
          feather.replace()
        </script>
   </body>
 </html>
-
-<?php
-function getRestaurantes(){
-  $sql = "SELECT * FROM restaurante";
-
-  $result = mysqli_query($GLOBALS['conn'], $sql);
-
-  if(mysqli_num_rows($result) > 0){
-      return $result;
-  }
-}
-?>
