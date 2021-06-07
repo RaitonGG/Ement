@@ -32,6 +32,15 @@ $database = new CreateDb("ementas");
                           </div>
                     <?php } ?>
                   <?php } ?>
+                  <?php
+                    $result1 = $database->getEstabelecimentos();
+                    if($result1){
+                      while ($row = mysqli_fetch_assoc($result1)){ ?>
+                            <div>
+                              <b>Nome do Restaurante:</b> <?php echo $row['nome_estabelecimento']; ?> <br/>
+                            </div>
+                      <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="currentDetails">
@@ -57,6 +66,12 @@ $database = new CreateDb("ementas");
             <button class="categories-btn">
             Comidas
           </button>
+          <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+           <script>
+             $(document).on('click', 'button', function(){
+               $(this).addClass('selected').siblings().removeClass('selected')
+             })
+           </script>
         </div>
     </div>
 
@@ -72,20 +87,87 @@ $database = new CreateDb("ementas");
         </div>
         <div class="container">
         <div class="listings-list">
-          <a href="productPage.html">
+          <!-- <a href="productPage.html"> -->
           <div class="listings-list-element">
               <div class="listings-list-element-text">
               <div class="text-title">
-              <h3 class="text-title-h3">produto x, (BD)</h3>
-              <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
+  <div class="row">
+    <div class="col-6">
+      <h3>Rustic Chicken Mostarda e Mel (BD)</h3>
+      <div><span class="listings-span">Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado (BD)</span></div>
+      <div class="info">
+        <span class="text-title-span">4,50€ (BD)</span>
+    </div>
+    <div class="col">
+      <span class="product-counter">
+        <span class="minus" onClick='decreaseCount(event, this)'><i data-feather="minus"></i></span>
+        <input type="text" value="1">
+        <span class="plus" onClick='increaseCount(event, this)'><i data-feather="plus"></i></span>
+            <script type="text/javascript">
+                  function increaseCount(a, b) {
+                    var input = b.previousElementSibling;
+                    var value = parseInt(input.value, 10);
+                    value = isNaN(value)? 0 : value;
+                    value ++;
+                    input.value = value;
+                    // o valor tem que vir de BD
+                    var buyBtnText = "Adicionar " + value +" ao carrinho • " + value*4.50 + "€"
+                    document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                  }
+                  function decreaseCount(a, b) {
+                    var input = b.nextElementSibling;
+                    var value = parseInt(input.value, 10);
+                    if (value > 1) {
+                      value = isNaN(value)? 0 : value;
+                      value --;
+                      input.value = value;
+                    }
+                    // o valor tem que vir de BD
+                    var buyBtnText = "Adicionar " + value +" ao carrinho • " + value*4.50 + "€"
+                    document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                  }
+                </script>
+    </span>
+    </div>
+  </div>
+</div>
+              <h3>Rustic Chicken Mostarda e Mel (BD)</h3>
+              <div><span class="listings-span">Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado (BD)</span></div>
               <div class="info">
                 <span class="text-title-span">4,50€ (BD)</span>
-                <span class="rating-circle">4.2 (BD)</span>
-              </div>
+                <span class="product-counter">
+                  <span class="minus" onClick='decreaseCount(event, this)'><i data-feather="minus"></i></span>
+                  <input type="text" value="1">
+                  <span class="plus" onClick='increaseCount(event, this)'><i data-feather="plus"></i></span>
+                      <script type="text/javascript">
+                            function increaseCount(a, b) {
+                              var input = b.previousElementSibling;
+                              var value = parseInt(input.value, 10);
+                              value = isNaN(value)? 0 : value;
+                              value ++;
+                              input.value = value;
+                              // o valor tem que vir de BD
+                              var buyBtnText = "Adicionar " + value +" ao carrinho • " + value*4.50 + "€"
+                              document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                            }
+                            function decreaseCount(a, b) {
+                              var input = b.nextElementSibling;
+                              var value = parseInt(input.value, 10);
+                              if (value > 1) {
+                                value = isNaN(value)? 0 : value;
+                                value --;
+                                input.value = value;
+                              }
+                              // o valor tem que vir de BD
+                              var buyBtnText = "Adicionar " + value +" ao carrinho • " + value*4.50 + "€"
+                              document.getElementById('buy-btn-text').innerHTML = buyBtnText;
+                            }
+                          </script>
+              </span>
               </div>
             </div>
           </div>
-          </a>
+          <!-- </a> -->
           <a href="productPage.html">
           <div class="listings-list-element">
             <div class="listings-list-element-text">
@@ -94,7 +176,6 @@ $database = new CreateDb("ementas");
                 <div><span>Pequena descrição sobre o produto e os seus componentes, (BD)</span></div>
                 <div class="info">
                     <span class="text-title-span">4,50€ (BD)</span>
-                    <span class="rating-circle">4.2 (BD)</span>
                 </div>
               </div>
             </div>
@@ -102,17 +183,7 @@ $database = new CreateDb("ementas");
           </a>
         </div>
       <div>
-      <?php
-        $result1 = $database->getEstabelecimentos();
-        if($result1){
-          while ($row = mysqli_fetch_assoc($result1)){ ?>
-                <div>
-                  <b>Nome do Restaurante:</b> <?php echo $row['nome_estabelecimento']; ?> <br/>
-                </div>
-          <?php } ?> 
-        <?php } ?> 
       </div>
-
       <script src="https://unpkg.com/feather-icons"></script>
        <script>
          feather.replace()
