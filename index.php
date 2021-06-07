@@ -1,11 +1,7 @@
 <?php
-
 session_start();
-
 require_once ("php/CreateDb.php");
-
 $database = new CreateDb("ementas");
-
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +10,8 @@ $database = new CreateDb("ementas");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css%22%3E"/>
 </head>
 <body>
     <header>
@@ -92,13 +89,13 @@ $database = new CreateDb("ementas");
               <div class="listings-list-element-text">
               <div class="text-title">
   <div class="row">
-    <div class="col-6">
+    <div class="col-8">
       <h3>Rustic Chicken Mostarda e Mel (BD)</h3>
       <div><span class="listings-span">Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado, Batata Frita, Arroz Branco e Ovo Estrelado (BD)</span></div>
       <div class="info">
         <span class="text-title-span">4,50€ (BD)</span>
     </div>
-    <div class="col">
+    <div class="col-4">
       <span class="product-counter">
         <span class="minus" onClick='decreaseCount(event, this)'><i data-feather="minus"></i></span>
         <input type="text" value="1">
