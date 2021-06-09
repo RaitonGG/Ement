@@ -2,5 +2,5 @@
 deployment:
   tasks:
     -export DEPLOYPATH=/home1/platafo8/ement.sispap.pt/
-    -/bin/cp index.html $DEPLOYPATH
+    -/bin/cp index.php $DEPLOYPATH
     -/bin/cp style.css $DEPLOYPATH
