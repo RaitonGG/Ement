@@ -9,19 +9,20 @@ class CreateDb
         public $con;
 
         // Base de dados Local -> Xampp
+    /*
     public function __construct(
         $tablename = "ementas",
         $servername = '127.0.0.1',
         $username = 'root',
         $password = ''
-    )
-    // Base de dados Servidor
-    /*public function __construct(
-        $tablename = "ementas",
-        $servername = '127.0.0.1',
-        $username = 'root',
-        $password = ''
     )*/
+    // Base de dados Servidor
+    public function __construct(
+        $tablename = "platafo8_Ements",
+        $servername = 'localhost',
+        $username = 'platafo8_Ricardo',
+        $password = 'SBCrtHPg5Lv3'
+    )
     {
       $this->tablename = $tablename;
       $this->servername = $servername;
